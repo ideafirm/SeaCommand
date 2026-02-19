@@ -46,6 +46,7 @@
 		5672A92E2F46EE4B0078F286 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5672A9302F46EE4B0078F286 /* CommandService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandService.swift; sourceTree = "<group>"; };
 		5672A9392F46EE4B0078F286 /* SSHService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHService.swift; sourceTree = "<group>"; };
+		5672A93A2F46EE4B0078F286 /* demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "demo-Bridging-Header.h"; sourceTree = "<group>"; };
 		56C7F7422F44BD48007AD004 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C7F7522F44BD50007AD004 /* demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C7F7562F44BD50007AD004 /* demoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoTests.swift; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 				5672A92D2F46EE4B0078F286 /* demoApp.swift */,
 				5672A92E2F46EE4B0078F286 /* ContentView.swift */,
 				5672A92F2F46EE4B0078F286 /* Services */,
+				5672A93A2F46EE4B0078F286 /* demo-Bridging-Header.h */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -475,6 +477,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mysoft.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "demo/demo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -504,6 +507,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mysoft.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "demo/demo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

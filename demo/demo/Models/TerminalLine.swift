@@ -16,11 +16,16 @@ enum TerminalLineType {
 }
 
 /// 终端输出行模型
-struct TerminalLine: Identifiable, Equatable {
+class TerminalLine: Identifiable, ObservableObject {
     let id = UUID()
-    let content: String
+    @Published var content: String
     let type: TerminalLineType
     let timestamp = Date()
+    
+    init(content: String, type: TerminalLineType) {
+        self.content = content
+        self.type = type
+    }
     
     /// 根据类型返回对应的颜色
     var color: Color {
@@ -75,5 +80,12 @@ extension Color {
             blue: Double(b) / 255,
             opacity: Double(a) / 255
         )
+    }
+}
+
+// MARK: - Hashable for ForEach
+extension TerminalLine: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

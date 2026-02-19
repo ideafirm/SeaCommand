@@ -17,6 +17,7 @@ class TerminalViewModel: ObservableObject {
     @Published var historyIndex: Int = -1
     @Published var isExecuting: Bool = false
     @Published var sshStatus: String = ""
+    @Published var isShellMode: Bool = false
     
     // MARK: - Private Properties
     private let commandService = CommandService.shared
@@ -26,15 +27,52 @@ class TerminalViewModel: ObservableObject {
     // MARK: - Initialization
     init() {
         showWelcome()
+        setupSSHHandlers()
     }
     
     // MARK: - Public Methods
+    
+    /// 设置 SSH 输出处理
+    private func setupSSHHandlers() {
+        sshService.shellOutputHandler = { [weak self] output in
+            guard let self = self else { return }
+            Task { @MainActor in
+                if self.isShellMode {
+                    self.appendRawOutput(output)
+                }
+            }
+        }
+        
+        sshService.shellErrorHandler = { [weak self] error in
+            guard let self = self else { return }
+            Task { @MainActor in
+                self.addLine(content: error, type: .error)
+            }
+        }
+    }
+    
+    /// 追加原始输出（用于 Shell 模式）
+    private func appendRawOutput(_ output: String) {
+        if let lastLine = lines.last, lastLine.type == .output {
+            // 追加到最后一行
+            lastLine.content += output
+        } else {
+            let newLine = TerminalLine(content: output, type: .output)
+            lines.append(newLine)
+        }
+    }
     
     /// 执行当前输入的命令
     func executeCommand() {
         let input = currentInput.trimmingCharacters(in: .whitespacesAndNewlines)
         
         guard !input.isEmpty else { return }
+        
+        // Shell 模式：直接发送到远程
+        if isShellMode {
+            handleShellInput(input)
+            return
+        }
         
         // 添加输入行
         addLine(content: input, type: .input)
@@ -73,6 +111,18 @@ class TerminalViewModel: ObservableObject {
             }
         }
         
+        // 处理 ssh-shell 进入 Shell 模式
+        if input == "ssh-shell" {
+            handleSSHShell()
+            return
+        }
+        
+        // 处理 ssh-shell-end 退出 Shell 模式
+        if input == "ssh-shell-end" {
+            handleSSHShellEnd()
+            return
+        }
+        
         // 检查是否为异步命令
         if commandService.executeAsync(input, outputHandler: { [weak self] output, isError in
             self?.addLine(content: output, type: isError ? .error : .output)
@@ -95,6 +145,33 @@ class TerminalViewModel: ObservableObject {
         
         // 更新 SSH 状态
         updateSSHStatus()
+    }
+    
+    /// 处理 Shell 模式下的输入
+    private func handleShellInput(_ input: String) {
+        // 检查退出命令
+        if input == "exit" || input == "logout" || input == "ssh-shell-end" {
+            handleSSHShellEnd()
+            return
+        }
+        
+        // 检查 Ctrl+C (用 ctrl-c 命令代替)
+        if input == "ctrl-c" {
+            sshService.writeToShell("\u{03}")
+            currentInput = ""
+            return
+        }
+        
+        // 检查 Ctrl+D
+        if input == "ctrl-d" {
+            sshService.writeToShell("\u{04}")
+            currentInput = ""
+            return
+        }
+        
+        // 发送命令到远程 Shell
+        sshService.writeToShell(input + "\n")
+        currentInput = ""
     }
     
     /// 浏览上一条历史命令
@@ -129,6 +206,26 @@ class TerminalViewModel: ObservableObject {
         showWelcome()
     }
     
+    /// 发送特殊键
+    func sendSpecialKey(_ key: String) {
+        if isShellMode {
+            switch key {
+            case "ctrl-c":
+                sshService.writeToShell("\u{03}")
+            case "ctrl-d":
+                sshService.writeToShell("\u{04}")
+            case "ctrl-z":
+                sshService.writeToShell("\u{1A}")
+            case "tab":
+                sshService.writeToShell("\t")
+            case "enter":
+                sshService.writeToShell("\n")
+            default:
+                break
+            }
+        }
+    }
+    
     // MARK: - Private Methods
     
     /// 添加一行输出
@@ -142,7 +239,8 @@ class TerminalViewModel: ObservableObject {
     private func showWelcome() {
         let welcome = """
         ╔════════════════════════════════════════════╗
-        ║     Welcome to iOS Terminal v1.1          ║
+        ║     Welcome to iOS Terminal v2.0          ║
+        ║     Full SSH Support Enabled              ║
         ║     Type 'help' for available commands    ║
         ╚════════════════════════════════════════════╝
         """
@@ -154,9 +252,15 @@ class TerminalViewModel: ObservableObject {
     /// 更新 SSH 状态显示
     private func updateSSHStatus() {
         if sshService.isConnected {
-            sshStatus = "[SSH: \(sshService.getConnectionInfo())]"
+            var status = "[SSH: \(sshService.getConnectionInfo())"
+            if isShellMode {
+                status += " | SHELL"
+            }
+            status += "]"
+            sshStatus = status
         } else {
             sshStatus = ""
+            isShellMode = false
         }
     }
     
@@ -188,15 +292,54 @@ class TerminalViewModel: ObservableObject {
             )
             
             await MainActor.run {
-                addLine(content: result, type: result.contains("error") || result.contains("refused") ? .error : .output)
+                addLine(content: result, type: result.contains("failed") || result.contains("refused") || result.contains("Error") ? .error : .output)
                 isExecuting = false
                 updateSSHStatus()
                 
                 if sshService.isConnected {
                     pendingSSHParams = nil
+                    addLine(content: "", type: .system)
+                    addLine(content: "Use 'ssh-exec <command>' to execute remote commands.", type: .system)
+                    addLine(content: "Use 'ssh-shell' to start interactive shell.", type: .system)
                 }
             }
         }
+    }
+    
+    /// 启动 SSH Shell 模式
+    private func handleSSHShell() {
+        guard sshService.isConnected else {
+            addLine(content: "ssh-shell: not connected. Connect first with 'ssh user@host' and 'ssh-login'.", type: .error)
+            return
+        }
+        
+        isExecuting = true
+        addLine(content: "Starting interactive shell...", type: .system)
+        
+        Task {
+            let success = await sshService.startShell()
+            
+            await MainActor.run {
+                if success {
+                    isShellMode = true
+                    addLine(content: "Interactive shell started.", type: .system)
+                    addLine(content: "Type 'exit', 'logout', or 'ssh-shell-end' to exit shell mode.", type: .system)
+                    addLine(content: "Use 'ctrl-c', 'ctrl-d', 'ctrl-z', 'tab' for special keys.", type: .system)
+                } else {
+                    addLine(content: "Failed to start interactive shell.", type: .error)
+                }
+                isExecuting = false
+                updateSSHStatus()
+            }
+        }
+    }
+    
+    /// 结束 SSH Shell 模式
+    private func handleSSHShellEnd() {
+        sshService.closeShell()
+        isShellMode = false
+        addLine(content: "Interactive shell ended.", type: .system)
+        updateSSHStatus()
     }
     
     /// 处理 curl 异步请求
