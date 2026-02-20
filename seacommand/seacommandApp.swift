@@ -1,6 +1,6 @@
 //
-//  demoApp.swift
-//  demo
+//  seacommandApp.swift
+//  seacommand
 //
 //  Created by sealua on 2026/2/17.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct demoApp: App {
+struct seacommandApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

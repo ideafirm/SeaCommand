@@ -1,15 +1,15 @@
 platform :ios, '15.0'
 use_frameworks!
 
-target 'demo' do
-  pod 'NMSSH', '~> 2.3.1'
+target 'seacommand' do
+  # NMSSH dependency removed
 end
 
-target 'demoTests' do
+target 'seacommandTests' do
   inherit! :search_paths
 end
 
-target 'demoUITests' do
+target 'seacommandUITests' do
   inherit! :search_paths
 end
 

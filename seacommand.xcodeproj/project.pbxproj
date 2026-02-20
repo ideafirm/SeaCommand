@@ -11,13 +11,13 @@
 		5672A9322F46EE4B0078F286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5672A9282F46EE4B0078F286 /* Assets.xcassets */; };
 		5672A9332F46EE4B0078F286 /* TerminalLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672A92A2F46EE4B0078F286 /* TerminalLine.swift */; };
 		5672A9342F46EE4B0078F286 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5672A92C2F46EE4B0078F286 /* Preview Assets.xcassets */; };
-		5672A9352F46EE4B0078F286 /* demoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672A92D2F46EE4B0078F286 /* demoApp.swift */; };
+		5672A9352F46EE4B0078F286 /* seacommandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672A92D2F46EE4B0078F286 /* seacommandApp.swift */; };
 		5672A9362F46EE4B0078F286 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672A92E2F46EE4B0078F286 /* ContentView.swift */; };
 		5672A9372F46EE4B0078F286 /* CommandService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672A9302F46EE4B0078F286 /* CommandService.swift */; };
 		5672A9382F46EE4B0078F286 /* SSHService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672A9392F46EE4B0078F286 /* SSHService.swift */; };
-		56C7F7572F44BD50007AD004 /* demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C7F7562F44BD50007AD004 /* demoTests.swift */; };
-		56C7F7612F44BD50007AD004 /* demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C7F7602F44BD50007AD004 /* demoUITests.swift */; };
-		56C7F7632F44BD50007AD004 /* demoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C7F7622F44BD50007AD004 /* demoUITestsLaunchTests.swift */; };
+		56C7F7572F44BD50007AD004 /* seacommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C7F7562F44BD50007AD004 /* seacommandTests.swift */; };
+		56C7F7612F44BD50007AD004 /* seacommandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C7F7602F44BD50007AD004 /* seacommandUITests.swift */; };
+		56C7F7632F44BD50007AD004 /* seacommandUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C7F7622F44BD50007AD004 /* seacommandUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,14 +26,14 @@
 			containerPortal = 56C7F73A2F44BD48007AD004 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 56C7F7412F44BD48007AD004;
-			remoteInfo = demo;
+			remoteInfo = seacommand;
 		};
 		56C7F75D2F44BD50007AD004 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 56C7F73A2F44BD48007AD004 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 56C7F7412F44BD48007AD004;
-			remoteInfo = demo;
+			remoteInfo = seacommand;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -42,17 +42,17 @@
 		5672A9282F46EE4B0078F286 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5672A92A2F46EE4B0078F286 /* TerminalLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalLine.swift; sourceTree = "<group>"; };
 		5672A92C2F46EE4B0078F286 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5672A92D2F46EE4B0078F286 /* demoApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = demoApp.swift; sourceTree = "<group>"; };
+		5672A92D2F46EE4B0078F286 /* seacommandApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = seacommandApp.swift; sourceTree = "<group>"; };
 		5672A92E2F46EE4B0078F286 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5672A9302F46EE4B0078F286 /* CommandService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandService.swift; sourceTree = "<group>"; };
 		5672A9392F46EE4B0078F286 /* SSHService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHService.swift; sourceTree = "<group>"; };
-		5672A93A2F46EE4B0078F286 /* demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "demo-Bridging-Header.h"; sourceTree = "<group>"; };
-		56C7F7422F44BD48007AD004 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		56C7F7522F44BD50007AD004 /* demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		56C7F7562F44BD50007AD004 /* demoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoTests.swift; sourceTree = "<group>"; };
-		56C7F75C2F44BD50007AD004 /* demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		56C7F7602F44BD50007AD004 /* demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoUITests.swift; sourceTree = "<group>"; };
-		56C7F7622F44BD50007AD004 /* demoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5672A93A2F46EE4B0078F286 /* seacommand-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "seacommand-Bridging-Header.h"; sourceTree = "<group>"; };
+		56C7F7422F44BD48007AD004 /* seacommand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seacommand.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56C7F7522F44BD50007AD004 /* seacommandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seacommandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56C7F7562F44BD50007AD004 /* seacommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seacommandTests.swift; sourceTree = "<group>"; };
+		56C7F75C2F44BD50007AD004 /* seacommandUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seacommandUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56C7F7602F44BD50007AD004 /* seacommandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seacommandUITests.swift; sourceTree = "<group>"; };
+		56C7F7622F44BD50007AD004 /* seacommandUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seacommandUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,19 +80,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5672A9252F46EE4B0078F286 /* demo */ = {
+		5672A9252F46EE4B0078F286 /* seacommand */ = {
 			isa = PBXGroup;
 			children = (
 				5672A9262F46EE4B0078F286 /* ViewModels */,
 				5672A9282F46EE4B0078F286 /* Assets.xcassets */,
 				5672A9292F46EE4B0078F286 /* Models */,
 				5672A92B2F46EE4B0078F286 /* Preview Content */,
-				5672A92D2F46EE4B0078F286 /* demoApp.swift */,
+				5672A92D2F46EE4B0078F286 /* seacommandApp.swift */,
 				5672A92E2F46EE4B0078F286 /* ContentView.swift */,
 				5672A92F2F46EE4B0078F286 /* Services */,
-				5672A93A2F46EE4B0078F286 /* demo-Bridging-Header.h */,
+				5672A93A2F46EE4B0078F286 /* seacommand-Bridging-Header.h */,
 			);
-			path = demo;
+			path = seacommand;
 			sourceTree = "<group>";
 		};
 		5672A9262F46EE4B0078F286 /* ViewModels */ = {
@@ -131,9 +131,9 @@
 		56C7F7392F44BD48007AD004 = {
 			isa = PBXGroup;
 			children = (
-				5672A9252F46EE4B0078F286 /* demo */,
-				56C7F7552F44BD50007AD004 /* demoTests */,
-				56C7F75F2F44BD50007AD004 /* demoUITests */,
+				5672A9252F46EE4B0078F286 /* seacommand */,
+				56C7F7552F44BD50007AD004 /* seacommandTests */,
+				56C7F75F2F44BD50007AD004 /* seacommandUITests */,
 				56C7F7432F44BD48007AD004 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,36 +141,36 @@
 		56C7F7432F44BD48007AD004 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				56C7F7422F44BD48007AD004 /* demo.app */,
-				56C7F7522F44BD50007AD004 /* demoTests.xctest */,
-				56C7F75C2F44BD50007AD004 /* demoUITests.xctest */,
+				56C7F7422F44BD48007AD004 /* seacommand.app */,
+				56C7F7522F44BD50007AD004 /* seacommandTests.xctest */,
+				56C7F75C2F44BD50007AD004 /* seacommandUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		56C7F7552F44BD50007AD004 /* demoTests */ = {
+		56C7F7552F44BD50007AD004 /* seacommandTests */ = {
 			isa = PBXGroup;
 			children = (
-				56C7F7562F44BD50007AD004 /* demoTests.swift */,
+				56C7F7562F44BD50007AD004 /* seacommandTests.swift */,
 			);
-			path = demoTests;
+			path = seacommandTests;
 			sourceTree = "<group>";
 		};
-		56C7F75F2F44BD50007AD004 /* demoUITests */ = {
+		56C7F75F2F44BD50007AD004 /* seacommandUITests */ = {
 			isa = PBXGroup;
 			children = (
-				56C7F7602F44BD50007AD004 /* demoUITests.swift */,
-				56C7F7622F44BD50007AD004 /* demoUITestsLaunchTests.swift */,
+				56C7F7602F44BD50007AD004 /* seacommandUITests.swift */,
+				56C7F7622F44BD50007AD004 /* seacommandUITestsLaunchTests.swift */,
 			);
-			path = demoUITests;
+			path = seacommandUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		56C7F7412F44BD48007AD004 /* demo */ = {
+		56C7F7412F44BD48007AD004 /* seacommand */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 56C7F7662F44BD50007AD004 /* Build configuration list for PBXNativeTarget "demo" */;
+			buildConfigurationList = 56C7F7662F44BD50007AD004 /* Build configuration list for PBXNativeTarget "seacommand" */;
 			buildPhases = (
 				56C7F73E2F44BD48007AD004 /* Sources */,
 				56C7F73F2F44BD48007AD004 /* Frameworks */,
@@ -180,14 +180,14 @@
 			);
 			dependencies = (
 			);
-			name = demo;
-			productName = demo;
-			productReference = 56C7F7422F44BD48007AD004 /* demo.app */;
+			name = seacommand;
+			productName = seacommand;
+			productReference = 56C7F7422F44BD48007AD004 /* seacommand.app */;
 			productType = "com.apple.product-type.application";
 		};
-		56C7F7512F44BD50007AD004 /* demoTests */ = {
+		56C7F7512F44BD50007AD004 /* seacommandTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 56C7F7692F44BD50007AD004 /* Build configuration list for PBXNativeTarget "demoTests" */;
+			buildConfigurationList = 56C7F7692F44BD50007AD004 /* Build configuration list for PBXNativeTarget "seacommandTests" */;
 			buildPhases = (
 				56C7F74E2F44BD50007AD004 /* Sources */,
 				56C7F74F2F44BD50007AD004 /* Frameworks */,
@@ -198,14 +198,14 @@
 			dependencies = (
 				56C7F7542F44BD50007AD004 /* PBXTargetDependency */,
 			);
-			name = demoTests;
-			productName = demoTests;
-			productReference = 56C7F7522F44BD50007AD004 /* demoTests.xctest */;
+			name = seacommandTests;
+			productName = seacommandTests;
+			productReference = 56C7F7522F44BD50007AD004 /* seacommandTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		56C7F75B2F44BD50007AD004 /* demoUITests */ = {
+		56C7F75B2F44BD50007AD004 /* seacommandUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 56C7F76C2F44BD50007AD004 /* Build configuration list for PBXNativeTarget "demoUITests" */;
+			buildConfigurationList = 56C7F76C2F44BD50007AD004 /* Build configuration list for PBXNativeTarget "seacommandUITests" */;
 			buildPhases = (
 				56C7F7582F44BD50007AD004 /* Sources */,
 				56C7F7592F44BD50007AD004 /* Frameworks */,
@@ -216,9 +216,9 @@
 			dependencies = (
 				56C7F75E2F44BD50007AD004 /* PBXTargetDependency */,
 			);
-			name = demoUITests;
-			productName = demoUITests;
-			productReference = 56C7F75C2F44BD50007AD004 /* demoUITests.xctest */;
+			name = seacommandUITests;
+			productName = seacommandUITests;
+			productReference = 56C7F75C2F44BD50007AD004 /* seacommandUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -244,7 +244,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 56C7F73D2F44BD48007AD004 /* Build configuration list for PBXProject "demo" */;
+			buildConfigurationList = 56C7F73D2F44BD48007AD004 /* Build configuration list for PBXProject "seacommand" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -257,9 +257,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				56C7F7412F44BD48007AD004 /* demo */,
-				56C7F7512F44BD50007AD004 /* demoTests */,
-				56C7F75B2F44BD50007AD004 /* demoUITests */,
+				56C7F7412F44BD48007AD004 /* seacommand */,
+				56C7F7512F44BD50007AD004 /* seacommandTests */,
+				56C7F75B2F44BD50007AD004 /* seacommandUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -297,7 +297,7 @@
 			files = (
 				5672A9332F46EE4B0078F286 /* TerminalLine.swift in Sources */,
 				5672A9362F46EE4B0078F286 /* ContentView.swift in Sources */,
-				5672A9352F46EE4B0078F286 /* demoApp.swift in Sources */,
+				5672A9352F46EE4B0078F286 /* seacommandApp.swift in Sources */,
 				5672A9312F46EE4B0078F286 /* TerminalViewModel.swift in Sources */,
 				5672A9372F46EE4B0078F286 /* CommandService.swift in Sources */,
 				5672A9382F46EE4B0078F286 /* SSHService.swift in Sources */,
@@ -308,7 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56C7F7572F44BD50007AD004 /* demoTests.swift in Sources */,
+				56C7F7572F44BD50007AD004 /* seacommandTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,8 +316,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56C7F7612F44BD50007AD004 /* demoUITests.swift in Sources */,
-				56C7F7632F44BD50007AD004 /* demoUITestsLaunchTests.swift in Sources */,
+				56C7F7612F44BD50007AD004 /* seacommandUITests.swift in Sources */,
+				56C7F7632F44BD50007AD004 /* seacommandUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,12 +326,12 @@
 /* Begin PBXTargetDependency section */
 		56C7F7542F44BD50007AD004 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 56C7F7412F44BD48007AD004 /* demo */;
+			target = 56C7F7412F44BD48007AD004 /* seacommand */;
 			targetProxy = 56C7F7532F44BD50007AD004 /* PBXContainerItemProxy */;
 		};
 		56C7F75E2F44BD50007AD004 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 56C7F7412F44BD48007AD004 /* demo */;
+			target = 56C7F7412F44BD48007AD004 /* seacommand */;
 			targetProxy = 56C7F75D2F44BD50007AD004 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -460,7 +460,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"demo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"seacommand/Preview Content\"";
 				DEVELOPMENT_TEAM = 73WPLA9H62;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -474,10 +474,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mysoft.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = mysoft.seacommand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "demo/demo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "seacommand/seacommand-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -490,7 +490,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"demo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"seacommand/Preview Content\"";
 				DEVELOPMENT_TEAM = 73WPLA9H62;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -504,10 +504,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mysoft.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = mysoft.seacommand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "demo/demo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "seacommand/seacommand-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -524,12 +524,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mysoft.demoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = mysoft.seacommandTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/demo.app/demo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/seacommand.app/demo";
 			};
 			name = Debug;
 		};
@@ -544,12 +544,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mysoft.demoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = mysoft.seacommandTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/demo.app/demo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/seacommand.app/demo";
 			};
 			name = Release;
 		};
@@ -562,12 +562,12 @@
 				DEVELOPMENT_TEAM = 73WPLA9H62;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mysoft.demoUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = mysoft.seacommandUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = demo;
+				TEST_TARGET_NAME = seacommand;
 			};
 			name = Debug;
 		};
@@ -580,19 +580,19 @@
 				DEVELOPMENT_TEAM = 73WPLA9H62;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mysoft.demoUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = mysoft.seacommandUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = demo;
+				TEST_TARGET_NAME = seacommand;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		56C7F73D2F44BD48007AD004 /* Build configuration list for PBXProject "demo" */ = {
+		56C7F73D2F44BD48007AD004 /* Build configuration list for PBXProject "seacommand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				56C7F7642F44BD50007AD004 /* Debug */,
@@ -601,7 +601,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		56C7F7662F44BD50007AD004 /* Build configuration list for PBXNativeTarget "demo" */ = {
+		56C7F7662F44BD50007AD004 /* Build configuration list for PBXNativeTarget "seacommand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				56C7F7672F44BD50007AD004 /* Debug */,
@@ -610,7 +610,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		56C7F7692F44BD50007AD004 /* Build configuration list for PBXNativeTarget "demoTests" */ = {
+		56C7F7692F44BD50007AD004 /* Build configuration list for PBXNativeTarget "seacommandTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				56C7F76A2F44BD50007AD004 /* Debug */,
@@ -619,7 +619,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		56C7F76C2F44BD50007AD004 /* Build configuration list for PBXNativeTarget "demoUITests" */ = {
+		56C7F76C2F44BD50007AD004 /* Build configuration list for PBXNativeTarget "seacommandUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				56C7F76D2F44BD50007AD004 /* Debug */,
