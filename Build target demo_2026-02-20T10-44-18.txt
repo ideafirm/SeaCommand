@@ -1,4 +1,0 @@
-
-Showing Recent Messages
-/Users/sealua/Documents/Project/MyLittleProject/SeaCommand/seacommand.xcodeproj One of the paths in DEVELOPMENT_ASSET_PATHS does not exist: /Users/sealua/Documents/Project/MyLittleProject/SeaCommand/demo/Preview Content
-
